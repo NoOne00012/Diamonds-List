@@ -1,1 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Моя страница</title>
 
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Symbols';
+        }
+
+        .head_screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .club {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 70%;
+            height: auto;
+
+        }
+
+        #blue {
+            background: rgb(255, 255, 255);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            margin-right: auto;
+            margin-left: 20px;
+            margin-top: 25px;
+        }
+
+        .member_list {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top, #1a2b6d, #127c99);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease-in-out infinite;
+            padding-top: 10px;
+            flex-direction: column;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .choice {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #127c99;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .toch {
+            padding: 4px;
+            border-radius: 100%;
+            background-color: rgb(245, 245, 245, 0.6);
+            margin: 5px;
+            
+        }
+
+        .func {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 100%;
+            
+            background-color: rgb(173, 199, 245);
+            border-radius: 10px;
+            opacity: 0.6;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        }
+
+        .func_div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 5%;
+            margin-bottom: 20px;
+            
+        }
+
+        .func0 {
+            width: auto;
+            height: 50%;
+            margin: 5px;
+            padding: 5px;
+            opacity: 0.5;
+        }
+
+        .members0 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #members {
+            width: 90%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            background-color: rgb(210, 225, 252);
+            border-radius: 15px;
+
+        }
+
+        .member {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            margin: 2px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .icon {
+            border-radius: 100%;
+            margin-right: 15px;
+            width: 14%;
+            height: auto;
+            margin-left: 15px;
+        }
+
+        .member_nick {
+            margin: 0;
+            padding: 0;
+            color: rgb(40, 60, 90);
+        }
+
+        #search {
+            all: unset;
+            color: rgba(0, 0, 0, 0.8);
+            width: 80%;
+        }
+
+        #search_icon {
+            height: 60%;
+            margin-left: 5px;
+            margin-right: auto;
+        }
+
+        .text-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-right: auto;
+        }
+
+        .member_tag {
+            color: rgb(175, 175, 175);
+            margin: 0;
+            padding: 0;
+            font-size: calc(1em - 2px);
+        }
+
+        .propusk {
+            width: 70%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-left: auto;
+            margin-right: 10%;
+        }
+
+        #members_inf0 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            display: none;
+        }
+
+        #members_inf {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .member_inf {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            margin-left: auto;
+            margin-right: 10px;
+            font-size: 80%;
+
+        }
+
+        .member_inf:first-of-type {
+            margin-right: auto;
+            margin-left: 10px;
+        }
+
+        .detal {
+            height: auto;
+            width: 7%;
+            margin-left: auto;
+            margin-right: 4%;
+            background-color: rgba(0, 0, 0, 0.1);
+            
+            border-radius: 100%;
+            opacity: 0.6;
+        }
+
+        #choice0 {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="head_screen">
+        <img src = "blue.png" width = 'auto' height = '5%' style = 'display: none;'>
+
+        <div class="member_list">
+
+            <div class="club">
+                <h1 id = 'blue'>Blue Diamonds</h1>
+            </div>
+
+            <div class="func_div">
+                <div class="func">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2811/2811790.png" id="search_icon" class="func0">
+                    <input id="search" placeholder="">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8113/8113272.png" class="func0" style = "margin-left: auto;">
+                </div>
+            </div>
+
+            <div id="members_inf0">
+                <div id="members_inf">
+                    <p class="member_inf" style="display: none;">10/30</p>
+                    <p class="member_inf">Members</p>
+                </div>
+            </div>
+
+            <div class="members0">
+                <div id="members">
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <div class="text_info">
+                            <p class = 'member_nick'><b>Nickname</b></p>
+                        </div>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                    <div class="propusk"></div>
+
+                    <div class="member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_inafkx1YsjhKqgE6l5MDooYsXgDz8uUI_8n-zo8SNSMsBMVyP7EyW51ccneruSo4XhE&usqp=CAU" class="icon">
+                        <p class = 'member_nick'><b>Nickname</b></p>
+
+                        <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" class="detal">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="choice0">
+            <div class="choice" style = ''>
+                <div class="toch"></div>
+                <div class="toch"></div>
+                <div class="toch" style = 'background-color: rgb(255, 255, 255);'></div>
+                <div class="toch"></div>
+                <div class="toch"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
