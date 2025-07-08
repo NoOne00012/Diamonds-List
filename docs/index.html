@@ -85,7 +85,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #127c99;
+            background-color: #127c9977;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 10px;
@@ -150,6 +150,7 @@
             margin-bottom: 20px;
             background-color: rgb(210, 225, 252);
             border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
         }
 
@@ -266,6 +267,25 @@
             position: fixed;
             bottom: 0;
             left: 0;
+        }
+
+        .choice_tools {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: auto;
+            background-color: #1a2b6d;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        .arrows {
+            width: auto;
+            max-width: 30px;
+            height: auto;
+            filter: invert();
+            opacity: 0.6;
         }
 
         
@@ -394,12 +414,16 @@
         </div>
 
         <div id="choice0">
-            <div class="choice" style = ''>
-                <div class="toch"></div>
-                <div class="toch"></div>
-                <div class="toch" style = 'background-color: rgb(255, 255, 255);'></div>
-                <div class="toch"></div>
-                <div class="toch"></div>
+            <div class="choice_tools">
+                <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" alt="" class="arrows" style="transform: rotateY(180deg);">
+                <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" alt="" class="arrows">
+                <div class="choice" style = ''>
+                    <div class="toch"></div>
+                    <div class="toch"></div>
+                    <div class="toch" style = 'background-color: rgb(255, 255, 255);'></div>
+                    <div class="toch"></div>
+                    <div class="toch"></div>
+                </div>
             </div>
         </div>
     </div>
