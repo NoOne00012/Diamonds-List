@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
     <style>
+
         html {
             width: 100%;
             height: 100%;
@@ -155,6 +156,8 @@
             background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: 500ms;
 
         }
 
@@ -203,6 +206,8 @@
             background-color: rgba(255, 255, 255, 0.1);
             margin-left: auto;
             margin-right: 10%;
+            opacity: 0;
+            transition: 500ms;
         }
 
         #members_inf0 {
@@ -245,7 +250,7 @@
             background-color: rgba(0, 0, 0, 0.1);
             filter: invert();
             border-radius: 100%;
-            opacity: 0.6;
+            opacity: 0;
         }
 
         #choice0 {
@@ -299,6 +304,12 @@
             margin: 0;
             padding: 0;
             color: white;
+        }
+
+        .icon_div, .member_nick {
+            transform: translateY(-5px);
+            opacity: 0;
+            transition: 500ms;
         }
 
         
@@ -388,10 +399,10 @@
 
                 member_div.appendChild(detal);
 
-                propusk = document.createElement('div');
+                let propusk = document.createElement('div');
                 propusk.className = 'propusk';
 
-                let mem = document.getElementById('members');
+                mem = document.getElementById('members');
                 mem.appendChild(member_div)
                 mem.appendChild(propusk);
 
@@ -400,6 +411,34 @@
                 count++;
             }
         }
+
+        mem.style.opacity = 1;
+        let nicks = document.getElementsByClassName('member_nick');
+        let icons = document.getElementsByClassName('icon_div');
+        let propusks = document.getElementsByClassName('propusk');
+        let detals = document.getElementsByClassName('detal');
+        
+        setTimeout(() => {
+            for (let icon of icons) {
+                icon.style.opacity = 1;
+                icon.style.transform = 'translateY(0)'; 
+            }
+
+            for (let nick of nicks) {
+                nick.style.opacity = 1;
+                nick.style.transform = 'translateY(0)';    
+            }
+                
+            for (let propusk of propusks) {
+                propusk.style.opacity = 1;
+            }
+
+            for (let detal of detals) {
+                detal.style.opacity = 0.6;
+            }
+
+        }, 500);
+
     })
 </script>
 </html>
