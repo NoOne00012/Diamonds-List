@@ -30,6 +30,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Noto Sans Symbols', 'TikTok Sans';
+            transition: 500ms;
         }
 
         .head_screen {
@@ -166,7 +167,10 @@
             align-items: center;
             padding-top: 10px;
             padding-bottom: 10px;
-
+            position: relative;
+            perspective: 900px;
+            transform-style: preserve-3d;
+            transition: all 600ms ease;
         }
 
         #search {
@@ -310,16 +314,13 @@
 
         .title {
             width: 100%;
-            padding-bottom: 200px;
+            padding-bottom: 250px;
             position: absolute;
             z-index: 0;
             background: linear-gradient(135deg, #0069d0, #00a79f);
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
             -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-
         }
-
-        
 
     </style>
 </head>
@@ -370,6 +371,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 <script>
@@ -382,6 +384,7 @@
             if (count < 30) {
                 let member_div = document.createElement('div');
                 member_div.className = 'member';
+                member_div.id = `member${count}`
 
                 let icon_div = document.createElement('div');
                 icon_div.className = 'icon_div';
@@ -445,6 +448,38 @@
                 detal.style.opacity = 0.6;
             }
         }, 500);
+
+        let deta = document.getElementsByClassName('detal')[0]
+    
+        if (deta) {
+            deta.onclick = function info() {
+                cards = document.getElementById('member0');
+                cards.style.background = 'white';
+                cards.style.borderRadius = '20px';
+                cards.style.zIndex = 9999;
+                
+                let members = document.getElementsByClassName('member');
+
+                for (let member of members) {
+                    if (member.id != 'member0') {
+                        member.style.filter = 'blur(10px)';
+                    }
+                }
+                setTimeout(() => {
+                    cards.style.transform = 'translateY(145px) rotateY(180deg)';
+                    cards.style.width = '80%';
+                    cards.style.scale = 0.5;
+
+                    setTimeout(() => {
+                        cards.style.scale = 1.2;
+                        cards.style.transform = 'translateY(150px) rotateY(0)';
+                    }, 500);
+
+                }, 200);
+            }
+        } else {
+            console.log('Элемент не найден')
+        }
 
     })
 </script>
