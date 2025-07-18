@@ -14,7 +14,7 @@
 
     <style>
 
-        html {
+        html { 
             width: 100%;
             height: auto;
             margin: 0;
@@ -168,9 +168,10 @@
             padding-top: 10px;
             padding-bottom: 10px;
             position: relative;
-            perspective: 900px;
+            perspective: 2000px;
             transform-style: preserve-3d;
             transition: all 600ms ease;
+            backface-visibility: hidden;
         }
 
         #search {
@@ -229,7 +230,7 @@
         }
 
         .member_inf {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(0, 0, 0, 0.4);
             margin: 0;
             margin-left: auto;
             margin-right: 10px;
@@ -245,7 +246,7 @@
         .detal {
             height: auto;
             width: 7%;
-            margin-left: auto;
+            margin-left: 20px;
             margin-right: 4%;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 100%;
@@ -286,7 +287,7 @@
         .icon_div {
             border-radius: 50%;
             margin-right: 15px;
-            width: 14%;
+            width: 12%;
             aspect-ratio: 1 / 1; 
             margin-left: 15px;
             overflow: hidden;
@@ -322,6 +323,20 @@
             -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
         }
 
+        .trophies_div {
+            width: auto;
+            height: auto;
+            margin-left: auto;
+            padding: 2px 10px 2px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trophies {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
     </style>
 </head>
 <body>
@@ -343,15 +358,14 @@
                 </div>
             </div>
 
-            <div id="members_inf0">
-                <div id="members_inf">
-                    <p class="member_inf" style="display: none;">10/30</p>
-                    <p class="member_inf">Members</p>
-                </div>
-            </div>
-
             <div class="members0" id="members0">
                 <div id="members">
+                    <div id="members_inf0">
+                        <div id="members_inf">
+                            <p class="member_inf">10/30</p>
+                            <p class="member_inf">Members</p>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -395,7 +409,6 @@
 
                 icon_div.appendChild(icon_member);
 
-
                 member_div.appendChild(icon_div);
 
                 let member_nick = document.createElement('p');  
@@ -403,6 +416,17 @@
                 member_nick.className = 'member_nick';
 
                 member_div.appendChild(member_nick);
+
+                let trophies_div = document.createElement('div');
+                trophies_div.className = 'trophies_div';
+
+                let trophies = document.createElement('div');
+                trophies.className = 'trophies';
+                trophies.innerText = '🏆 65000';
+
+                trophies_div.appendChild(trophies);
+
+                member_div.appendChild(trophies_div)
 
                 let detal = document.createElement('img');  
                 detal.src = 'https://cdn-icons-png.flaticon.com/128/10520/10520483.png';
