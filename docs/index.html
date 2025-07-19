@@ -50,6 +50,7 @@
             width: 70%;
             height: auto;
             z-index: 1;
+            transition: 500ms;
         }
 
         #blue {
@@ -125,6 +126,7 @@
             width: 100%;
             height: 35px;
             margin-bottom: 20px;
+            transition: 500ms;
             
         }
 
@@ -366,7 +368,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff8e, #eaf6ff8a);
+            background: linear-gradient(135deg, #ffffffcc, #eaf6ffcc);
             backdrop-filter: blur(50px);
             color: rgba(0, 0, 0);
             position: fixed;
@@ -401,6 +403,7 @@
 
         #clubText2 {
             font-size: small;
+            color: rgb(0, 0, 0, 0.8)
         }
 
     </style>
@@ -592,9 +595,11 @@
     const onInter = (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting === false) {
-            console.log('есть');
+            document.getElementsByClassName('func_div')[0].style.opacity = 0;
+            document.getElementsByClassName('club')[0].style.opacity = 0;
             document.getElementById('fixClubTitle').style.opacity = 1;
             members = document.getElementById('members');
+            members.style.borderRadius = 0;
             members.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
