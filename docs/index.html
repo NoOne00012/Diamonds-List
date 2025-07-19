@@ -369,7 +369,7 @@
             align-items: center;
             text-align: center;
             background: linear-gradient(135deg, #ffffffcc, #eaf6ffcc);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(50px);
             color: rgba(0, 0, 0);
             position: fixed;
             top: 0;
@@ -391,6 +391,8 @@
             height: auto;
             margin: 0;
             padding: 0;
+            transform: translateY(20px);
+            transition: all 500ms ease-out;
 
 
         }
@@ -600,10 +602,17 @@
             document.getElementById('fixClubTitle').style.opacity = 1;
             members = document.getElementById('members');
             members.style.borderRadius = 0;
-            members.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            setTimeout(() => {
+                const divClub = document.getElementById('divClub');
+                divClub.style.transform = 'translateY(0)';
+            }, 500);
+            
+        } else {
+            document.getElementsByClassName('func_div')[0].style.opacity = 1;
+            document.getElementsByClassName('club')[0].style.opacity = 1;
+            document.getElementById('fixClubTitle').style.opacity = 0;
+            members = document.getElementById('members');
+            members.style.borderRadius = '20px 20px 0 0';
         }
     }
 
