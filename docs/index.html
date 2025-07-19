@@ -50,6 +50,7 @@
             width: 70%;
             height: auto;
             z-index: 1;
+            transform: translateX(0);
             transition: 1000ms;
         }
 
@@ -599,12 +600,16 @@
         const entry = entries[0];
         if (entry.isIntersecting === false) {
             document.getElementsByClassName('func_div')[0].style.opacity = 0;
-            document.getElementsByClassName('club')[0].style.opacity = 0;
+            club = document.getElementsByClassName('club')[0].style;
+            club.opacity = 0;
+            club.transform = "translateX(40px)";
             document.getElementById('fixClubTitle').style.opacity = 1;
             members = document.getElementById('members');
             members.style.borderRadius = 0;
             const divClub = document.getElementById('divClub');
             divClub.style.transform = 'translateY(0)';
+
+            
             
         } else {
             document.getElementsByClassName('func_div')[0].style.opacity = 1;
@@ -612,6 +617,7 @@
             document.getElementById('fixClubTitle').style.opacity = 0;
             members = document.getElementById('members');
             members.style.borderRadius = '20px 20px 0 0';
+            club.transform = "translateX(0)";
         }
     }
 
