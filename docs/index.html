@@ -373,11 +373,34 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 65px;
+            height: 70px;
             z-index: 3;
-            /*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             opacity: 0;
             transition: 500ms;
+        }
+
+        #divCLub {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: auto;
+            height: auto;
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        #clubText, #clubText2 {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+
+        #clubText2 {
+            font-size: small;
         }
 
     </style>
@@ -433,7 +456,10 @@
         </div>
 
         <div id="fixClubTitle">
-            <h4 id="clubText">Blue Diamonds</h4>
+            <div id="divClub">
+                <h4 id="clubText">Blue Diamonds</h4>
+                <p id="clubText2">Список участников</p>
+            </div>
         </div>
     </div>
 
