@@ -614,7 +614,9 @@
         } else {
             document.getElementsByClassName('func_div')[0].style.opacity = 1;
             document.getElementsByClassName('club')[0].style.opacity = 1;
-            document.getElementById('fixClubTitle').style.opacity = 0;
+            const ClubTitle = document.getElementById('fixClubTitle').style;
+            ClubTitle.opacity = 0;
+            ClubTitle.transform = "translateY(-10px)";
             members = document.getElementById('members');
             members.style.borderRadius = '20px 20px 0 0';
             club.transform = "translateX(0)";
