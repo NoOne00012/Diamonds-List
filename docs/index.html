@@ -366,9 +366,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-color: rgb(255, 255, 255, 0.9);
-            backdrop-filter: blur(50px);
-            color: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #0068d0e8, #00a79fe8);
+            backdrop-filter: blur(20px);
+            color: rgba(255, 255, 255);
             position: fixed;
             top: 0;
             left: 0;
@@ -433,7 +433,7 @@
         </div>
 
         <div id="fixClubTitle">
-            <p id="clubText">Blue Diamonds</p>
+            <h4 id="clubText">Blue Diamonds</h4>
         </div>
     </div>
 
@@ -570,7 +570,7 @@
             document.getElementById('fixClubTitle').style.opacity = 1;
             members = document.getElementById('members');
             members.scrollIntoView({
-                behaviour: 'smooth',
+                behavior: 'smooth',
                 block: 'start'
             });
         }
