@@ -382,7 +382,7 @@
             transition: 500ms;
         }
 
-        #divCLub {
+        #divClub {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -391,8 +391,9 @@
             height: auto;
             margin: 0;
             padding: 0;
-            transform: translateY(20px);
-            transition: all 500ms ease-out;
+            transform: translateY(-20px);
+            transition: all 500ms ease;
+            flex-direction: column;
 
 
         }
@@ -602,10 +603,8 @@
             document.getElementById('fixClubTitle').style.opacity = 1;
             members = document.getElementById('members');
             members.style.borderRadius = 0;
-            setTimeout(() => {
-                const divClub = document.getElementById('divClub');
-                divClub.style.transform = 'translateY(0)';
-            }, 500);
+            const divClub = document.getElementById('divClub');
+            divClub.style.transform = 'translateY(0)';
             
         } else {
             document.getElementsByClassName('func_div')[0].style.opacity = 1;
