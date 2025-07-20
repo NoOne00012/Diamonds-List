@@ -90,7 +90,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #127c9977;
+            background-color: #127c9980;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 10px;
@@ -265,6 +265,7 @@
             position: fixed;
             bottom: 0;
             left: 0;
+            z-index: 3;
         }
 
         .choice_tools {
@@ -273,18 +274,19 @@
             align-items: center;
             width: auto;
             height: auto;
-            background-color: #1a2b6d90;
+            background: linear-gradient(135deg, #ffffffcc, #eaf6ffcc);
             border-radius: 30px;
             padding: 10px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(50px);
+            margin-bottom: 10px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
         }
 
         .arrows {
             width: auto;
             max-width: 30px;
             height: auto;
-            filter: invert();
-            opacity: 0.6;
+            opacity: 0.4;
         }
 
         .icon_div {
@@ -591,14 +593,16 @@
 
     })
 
-    const titl = document.querySelector('#blue');
+    const titl = document.querySelector('#members');
     const options = {
-        threshold: 0
+        root: null,
+        threshold: 0,
+        rootMargin: '0px 0px -100% 0px'
     }
 
     const onInter = (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting === false) {
+        if (entry.isIntersecting === true) {
             document.getElementsByClassName('func_div')[0].style.opacity = 0;
             club = document.getElementsByClassName('club')[0].style;
             club.opacity = 0;
