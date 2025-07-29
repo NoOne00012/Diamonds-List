@@ -439,6 +439,10 @@
 
         }
 
+        #clubText {
+            color: #0069d0;
+        }
+
         #clubText, #clubText2 {
             margin: 0;
             padding: 0;
@@ -463,11 +467,11 @@
 
         .headCircle {
                 position: absolute;
-                bottom: 0;
+                top: 0;
                 left: 0;
                 width: 100%;
                 aspect-ratio: 1 / 1;
-                background: linear-gradient(to bottom left, #ffffff3d, rgba(0,0,0,0));
+                background: linear-gradient(to top right, #ffffff3d, rgba(0,0,0,0));
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -478,7 +482,7 @@
 
         .circle {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             display: flex;
             justify-content: center;
@@ -513,7 +517,7 @@
         <div class="member_list">
 
             <div class="title">
-                <div class="container" style="z-index: -1; opacity: 0.2;">
+                <div class="container" style="z-index: -1; opacity: 0.3; display: none;">
                     <div class="headCircle">
                         <div class="circle" id="circle2">
                             <div class="circle" id="circle3">
