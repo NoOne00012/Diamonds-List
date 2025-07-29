@@ -358,7 +358,7 @@
 
         .title {
             width: 100%;
-            padding-bottom: 250px;
+            padding-bottom: 350px;
             position: absolute;
             z-index: 0;
             background: linear-gradient(135deg, #0069d0, #00a79f);
@@ -465,15 +465,17 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                height: 100%;
+                width: 90%;
                 aspect-ratio: 1 / 1;
-                background: linear-gradient(to top right, #ffffff41, rgba(0,0,0,0));
+                background: linear-gradient(to bottom left, #ffffff41, rgba(0,0,0,0));
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 10%;
-                transform: translateX(-30px);
+                -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                transform: translateX(-60px);
+                margin-bottom: 25%;
             }
 
         .circle {
@@ -486,7 +488,7 @@
             width: 80%;
             aspect-ratio: 1 / 1;
             background: linear-gradient(to top right, #ffffff2a, rgba(0,0,0,0));
-            box-shadow: 10px -10px 30px #ffffff3d;
+            box-shadow: 10px -10px 30px #8d8d8d3d;
             border-radius: 50%;
             backdrop-filter: blur(20px);
         }
@@ -513,8 +515,7 @@
         <div class="member_list">
 
             <div class="title">
-                <div class="container">
-
+                <div class="container" style="z-index: -1;">
                     <div class="headCircle">
                         <div class="circle" id="circle2">
                             <div class="circle" id="circle3">
