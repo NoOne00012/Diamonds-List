@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
 
     <style>
         html {
@@ -72,8 +72,8 @@
             height: auto;
             border-radius: 30px;
             margin-bottom: 5px;
-            filter: drop-shadow(0 6px 20px rgba(173, 216, 230, 0.3))
-                    drop-shadow(0 0 20px rgba(255, 105, 180, 0.2));
+            filter: drop-shadow(0 6px 10px rgba(173, 216, 230, 0.6))
+                    drop-shadow(0 0 10px rgba(255, 105, 180, 0.4));
         }
 
         p {
@@ -94,7 +94,7 @@
         }
 
         .aboutUs {
-            margin-top: 5px;
+            margin-top: 10px;
             color: #007bff;
             font-size: smaller;
         }
@@ -115,7 +115,7 @@
 <body>
     <div class="headScreen">
         <img src="https://i.ibb.co/mC74T9BL/welcome.png" class="headImg">
-        <div class="start_title"><h1>Привет,</h1></div>
+        <div class="start_title"><h1>Привет,</h1> <h1 class="username">  Just a fog</h1></div>
         <div class="text">
             <p>Рады видеть тебя в <b>Diamonds Team!</b><br>Играй, общайся, радуйся вместе с нами!</p>
         </div>
@@ -131,9 +131,7 @@
     const user = tg.initDataUnsafe.user;
     const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
-    username = document.createElement('h1');
+    username = document.getElementsByClassName('username')[0];
     username.innerText = fullName;
-    username.className = 'username';
-    document.getElementsByClassName('start_title')[0].appendChild(username)
 </script>
 </html>
