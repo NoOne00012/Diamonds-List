@@ -60,8 +60,8 @@
             border-radius: 15px;
             width: 90%;
             height: 10%;
-            background-color: #d7e3f2;
-            color: #007aff;
+            background-color: #007bff;
+            color: white;
             text-align: center;
             margin-top: auto;
             font-size: larger;
@@ -110,26 +110,13 @@
             color: #007bff;
         }
 
-        .error {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            backdrop-filter: blur(30px);
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            
-        }
     </style>
 </head>
 
 <body>
     <div class="headScreen">
         <img src="https://i.ibb.co/mC74T9BL/welcome.png" class="headImg">
-        <div class="start_title"><h1>Привет,</h1> <h1 class="username">  Just a fog</h1></div>
+        <div class="start_title"><h1>Привет, <span class="username">Just a fog</span></h1></div>
         <div class="text">
             <p>Рады видеть тебя в <b>Diamonds Team!</b><br>Играй, общайся, радуйся вместе с нами!</p>
         </div>
@@ -138,29 +125,16 @@
         <div class="headMenu">
         </div>
     </div>
-
-    <div class="error">
-
-    </div>
 </body>
 
 <script>
-    try {
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        const user = tg.initDataUnsafe.user;
-        const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    window.Telegram.WebApp.requestFullscreen()
+    const user = tg.initDataUnsafe.user;
+    const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
-        username = document.getElementsByClassName('username')[0];
-        username.innerText = fullName;
-    } catch (e) {
-        error = document.createElement('p');
-        error.innerText = e;
-        obj = document.createElement('pre');
-        obj.innerText = JSON.stringify(tg.initDataUnsafe, null, 2)
-        errorDiv = document.getElementsByClassName('error')[0];
-        errorDiv.appendChild(error);
-        errorDiv.appendChild(obj);
-    }
+    username = document.getElementsByClassName('username')[0];
+    username.innerText = fullName;
 </script>
 </html>
