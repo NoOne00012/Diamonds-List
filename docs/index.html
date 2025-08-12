@@ -127,11 +127,15 @@
 </body>
 
 <script>
-    const tg = window.Telegram.WebApp;
-    const user = tg.initDataUnsafe.user;
-    const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
+    try {
+        const tg = window.Telegram.WebApp;
+        const user = tg.initDataUnsafe.user;
+        const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
-    username = document.getElementsByClassName('username')[0];
-    username.innerText = fullName;
+        username = document.getElementsByClassName('username')[0];
+        username.innerText = fullName;
+    } catch (e) {
+        document.getElementsByClassName('username')[0].innerText = e;
+    }
 </script>
 </html>
