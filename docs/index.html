@@ -109,6 +109,20 @@
         .username {
             color: #007bff;
         }
+
+        .error {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(30px);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            
+        }
     </style>
 </head>
 
@@ -124,18 +138,29 @@
         <div class="headMenu">
         </div>
     </div>
+
+    <div class="error">
+
+    </div>
 </body>
 
 <script>
     try {
         const tg = window.Telegram.WebApp;
+        tg.ready();
         const user = tg.initDataUnsafe.user;
         const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
         username = document.getElementsByClassName('username')[0];
         username.innerText = fullName;
     } catch (e) {
-        document.getElementsByClassName('username')[0].innerText = e;
+        error = document.createElement('p');
+        error.innerText = e;
+        obj = document.createElement('pre');
+        obj.innerText = JSON.stringify(tg.initDataUnsafe, null, 2)
+        errorDiv = document.getElementsByClassName('error')[0];
+        errorDiv.appendChild(error);
+        errorDiv.appendChild(obj);
     }
 </script>
 </html>
