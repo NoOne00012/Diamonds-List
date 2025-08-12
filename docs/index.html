@@ -5,750 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Моя страница</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Beta Web App for DTbot</title>    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">    <style>
 
-    <style>
-
-        html { 
+        html {
+            font-family: 'Roboto';
             width: 100%;
-            height: auto;
+            height: 100%;
             margin: 0;
-            padding: 0;
         }
 
         body {
-            height: auto;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans Symbols', 'TikTok Sans';
-            transition: 500ms;
-        }
-
-        .head_screen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             width: 100%;
-            height: auto;
-        }
-
-        .club {
-            display: flex;
-            justify-content: center;
-            width: 90%;
-            height: auto;
-            z-index: 1;
-            transform: translateX(0);
-            transition: 1000ms;
-            margin: 0;
-            padding: 0;
-        }
-
-        #blue {
-            color: white;
-            margin-bottom: 12px;
-            margin-right: auto;
-            margin-left: 2px;
-            margin-top: 50px;
-            white-space: nowrap;
-            padding: 0;
-            line-height: 1;
-            font-size: x-large;
-        }
-
-        .member_list {
-            display: flex;
-            width: 100%;
-            height: auto;
-            background: white;
-            background-size: 200% 200%;
-            animation: gradientShift 8s ease-in-out infinite;
-            flex-direction: column;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .choice {
-            width: auto;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #127c9980;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 10px;
-            border-radius: 20px;
-        }
-
-        .toch {
-            padding: 4px;
-            border-radius: 100%;
-            background-color: rgb(245, 245, 245, 0.6);
-            margin: 5px;
-            
-        }
-
-        .func {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
             height: 100%;
-            backdrop-filter: blur(30px);
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 10px;
-            opacity: 0.6;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
             margin: 0;
-
-        }
-
-        .func_div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 35px;
-            margin-bottom: 15px;
-            transition: 1000ms;
-            
-        }
-
-        .func0 {
-            width: auto;
-            height: 50%;
-            margin: 0;
-            padding: 5px;
-            opacity: 0.5;
-        }
-
-        .members0 {
-            width: 100%;
-            height: auto;
+            background: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #members {
+        .headScreen {
             width: 100%;
-            height: auto;
+            height: 90%;
+            margin: 0;
             display: flex;
+            justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255);
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            opacity: 0;
-            z-index: 1;
-            transition: 1s;
-            counter-reset: num_top;
-
-        }
-
-        .member {
-            width: 100%;
-            height: 10%;
-            display: flex;
-            align-items: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            position: relative;
-            perspective: 2000px;
-            transform-style: preserve-3d;
-            transition: all 600ms ease;
-            backface-visibility: hidden;
-            counter-increment: num_top;
-
-        }
-
-        .member::before {
-            content: counter(num_top);
-            margin-left: 15px;
-            width: 8%;
-            max-width: 30px;
-            aspect-ratio: 1 / 1; 
-            border-radius: 8px;
-            font-weight: 500;
-            color: rgb(120, 120, 120);
-            background-color: rgb(0, 0, 0, 0.1);
-            opacity: 0.6;
-            line-height: 1;
-            display: flex; 
-            justify-content: center;
-            align-items: center;
             text-align: center;
         }
 
-        #search {
+        .headMenu {
+            width: 100%;
+            height: 11%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f2f2;
+            border-top: 1px solid  #bbbbbd;
+            display: none;
+        }
+
+        .import {
             all: unset;
-            color: rgba(0, 0, 0, 0.8);
-            width: 80%;
-        }
-
-        #search_icon {
-            height: 60%;
-            margin-left: 5px;
-            margin-right: auto;
-        }
-
-        .text-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-right: auto;
-        }
-
-        .member_tag {
-            color: rgb(175, 175, 175);
-            margin: 0;
-            padding: 0;
-            font-size: calc(1em - 2px);
-        }
-
-        .propusk {
-            width: 88%;
-            height: 1px;
-            background-color: rgba(0, 0, 0, 0.1);
-            margin-left: auto;
-            opacity: 0;
-            transition: 500ms;
-        }
-
-        #members_inf0 {
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            display: none;
-        }
-
-        #members_inf {
+            border-radius: 15px;
             width: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
+            height: 8%;
+            background-color: #d7e3f2;
+            color: #007aff;
+            text-align: center;
+            margin-top: auto;
         }
 
-        .member_inf {
-            color: rgba(0, 0, 0, 0.4);
-            margin: 0;
-            margin-left: auto;
-            margin-right: 10px;
-            font-size: 80%;
-
-        }
-
-        .member_inf:first-of-type {
-            margin-right: auto;
-            margin-left: 10px;
-        }
-
-        .detal {
+        .headImg {
+            width: 90%;
             height: auto;
-            max-width: 30px;
-            width: 7%;
-            margin-left: auto;
-            margin-right: 4%;
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 100%;
-            opacity: 0;
-        }
-
-        #choice0 {
-            width: 100%;
-            height: 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 3;
-        }
-
-        .choice_tools {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: auto;
-            height: auto;
-            background: rgb(220, 220, 220, 0.4);
             border-radius: 30px;
-            padding: 10px;
-            backdrop-filter: blur(30px);
-            margin-bottom: 15px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
         }
 
-        .arrows {
-            width: auto;
-            max-width: 30px;
-            height: auto;
-            opacity: 0.4;
-        }
-
-        .icon_background {
-            border-radius: 50%;
-            margin-right: 15px;
-            width: 10%;
-            max-width: 50px;
-            aspect-ratio: 1 / 1; 
-            margin-left: 15px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0069d0, #00a79f);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .icon_div {
-            border-radius: 50%;
-            width: 85%;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-        }
-
-        .icon {
-            width: 100%;
-            height: auto;
-            transform: scale(1.3);
-            transform-origin: center;
-        }
-
-        .member_nick {
+        p {
             margin: 0;
             padding: 0;
-            color: black;
         }
 
-        .icon_div, .member_nick {
-            transform: translateY(-5px);
-            opacity: 0;
-            transition: 500ms;
+        h2 {
+            line-height: 0.5;
         }
 
-        .title {
-            width: 100%;
-            padding-bottom: 350px;
-            position: absolute;
-            z-index: 0;
-            background: linear-gradient(135deg, #0069d0, #00a79f);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-        }
-
-        .trophies_div {
-            width: auto;
-            height: auto;
-            margin-left: auto;
-            padding: 2px 10px 2px 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none;
-        }
-
-        .trophies {
-            color: rgba(0, 0, 0, 0.6);
-        }
-
-        #warning {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-color: rgb(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            padding-bottom: 15px;
-            z-index: 3;
-            display: none;
-        }
-
-        #warning_text {
-            color: rgba(0, 0, 0, 0.6);
-            font-size: x-small;
-            line-height: 2;
-        }
-
-        #fixClubTitle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #ffffffcc, #eaf6ffcc);
-            backdrop-filter: blur(20px);
-            color: rgba(0, 0, 0);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 3;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transition: 300ms;
-        }
-
-        #divClub {
+        .text {
+            width: 92%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            width: auto;
-            height: auto;
-            margin: 0;
-            padding: 0;
-            transform: translateY(-10px);
-            transition: all 500ms;
-            flex-direction: column;
-
-
         }
-
-        #clubText {
-            color: #0069d0;
-        }
-
-        #clubText, #clubText2 {
-            margin: 0;
-            padding: 0;
-            line-height: 1.2;
-        }
-
-        #clubText2 {
-            font-size: small;
-            color: rgb(0, 0, 0, 0.8)
-        }
-        
-        #club0 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding 0;
-
-        }
-
-        .headCircle {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background: linear-gradient(to top right, #ffffff3d, rgba(0,0,0,0));
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transform: translateX(-60px);
-                margin-bottom: 25%;
-            }
-
-        .circle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(to top right, #ffffff3d, rgba(0,0,0,0));
-            box-shadow: 10px -10px 30px #2740613d;
-            border-radius: 50%;
-            backdrop-filter: blur(20px);
-        }
-
-        #lastCircle {
-            width: 70%;
-            
-        }
-
-        #circle2 {
-            width: 85%;
-        }
-
-        #circle4 {
-            width: 75%;
-        }
-
     </style>
 </head>
+
 <body>
-    <div class="head_screen">
-        <img src = "blue.png" width = 'auto' height = '5%' style = 'display: none;'>
-
-        <div class="member_list">
-
-            <div class="title">
-                <div class="container" style="z-index: -1; opacity: 0.3; display: none;">
-                    <div class="headCircle">
-                        <div class="circle" id="circle2">
-                            <div class="circle" id="circle3">
-                                <div class="circle" id="circle4">
-                                    <div class="circle" id="lastCircle">
-                                        <img src="https://cdn-icons-png.flaticon.com/128/5768/5768095.png" height="50%" style="filter: invert(); opacity: 0.4; display: none;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="club0">
-                <div class="club">
-                    <h2 id = 'blue'>Blue Diamonds</h2>
-                </div>
-            </div>
-            <div class="func_div">
-                <div class="func">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2811/2811790.png" id="search_icon" class="func0">
-                    <input id="search" placeholder="">
-                    <img src="https://cdn-icons-png.flaticon.com/128/8113/8113272.png" class="func0" style = "margin-left: auto;">
-                </div>
-            </div>
-
-            <div class="members0" id="members0">
-                <div id="members">
-                    <div id="members_inf0">
-                        <div id="members_inf">
-                            <p class="member_inf">10/30</p>
-                            <p class="member_inf">Members</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <div class="headScreen">
+        <img src="https://i.ibb.co/mC74T9BL/welcome.png" class="headImg">
+        <h2>Приветствуем</h2>
+        <div class="text">
+            <p>Рады видеть тебя в <b>Diamonds Team!</b><br>С этого дня ты — часть нашей команды. Играй, общайся, радуйся вместе с нами! Мы уверены, что тебя ждёт много интересного и увлекательного.</p>
         </div>
-
-        <div id="choice0">
-            <div class="choice_tools">
-                <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" alt="" class="arrows" style="transform: rotateY(180deg);">
-                <img src="https://cdn-icons-png.flaticon.com/128/10520/10520483.png" alt="" class="arrows">
-                <div class="choice" style = ''>
-                    <div class="toch"></div>
-                    <div class="toch"></div>
-                    <div class="toch" style = 'background-color: rgb(255, 255, 255);'></div>
-                    <div class="toch"></div>
-                    <div class="toch"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="warning">
-            <p id="warning_text">В Brawl Stars API может быть задержка синхранизации с игрой.</p>
-        </div>
-
-        <div id="fixClubTitle">
-            <div id="divClub">
-                <h3 id="clubText">Blue Diamonds</h3>
-                <p id="clubText2">Список участников</p>
-            </div>
+        <button class="import"><b>Начать</b></button>
+        <div class="headMenu">
         </div>
     </div>
-
 </body>
-
-<script>
-
-    axios.get('https://noone0001.pythonanywhere.com/ClubList')
-    .then(response => {
-        const members = response.data;
-        let count = 0;
-        for (const member of members) {
-            if (count < 30) {
-                let member_div = document.createElement('div');
-                member_div.className = 'member';
-                member_div.id = `member${count}`;
-
-                let icon_bg = document.createElement('div');
-                icon_bg.className = 'icon_background';
-
-                let icon_div = document.createElement('div');
-                icon_div.className = 'icon_div';
-
-                let icon_member = document.createElement('img');  
-                icon_member.src = member.icon;
-                icon_member.className = 'icon';
-
-                icon_bg.appendChild(icon_div);
-                icon_div.appendChild(icon_member);
-
-                member_div.appendChild(icon_bg);
-
-                let member_nick = document.createElement('p');  
-                member_nick.textContent = member.name;
-                member_nick.className = 'member_nick';
-
-                member_div.appendChild(member_nick);
-
-                let trophies_div = document.createElement('div');
-                trophies_div.className = 'trophies_div';
-
-                let trophies = document.createElement('div');
-                trophies.className = 'trophies';
-                trophies.innerText = '🏆 65000';
-
-                trophies_div.appendChild(trophies);
-
-                member_div.appendChild(trophies_div)
-
-                let detal = document.createElement('img');  
-                detal.src = 'https://cdn-icons-png.flaticon.com/128/10520/10520483.png';
-                detal.className = 'detal';
-
-                member_div.appendChild(detal);
-
-                let propusk = document.createElement('div');
-                propusk.className = 'propusk';
-
-                mem = document.getElementById('members');
-                mem.appendChild(member_div)
-                mem.appendChild(propusk);
-
-                
-
-                count++;
-            }
-        }
-
-        mem.style.opacity = 1;
-        let nicks = document.getElementsByClassName('member_nick');
-        let icons = document.getElementsByClassName('icon_div');
-        let propusks = document.getElementsByClassName('propusk');
-        let detals = document.getElementsByClassName('detal');
-        
-        setTimeout(() => {
-            for (let icon of icons) {
-                icon.style.opacity = 1;
-                icon.style.transform = 'translateY(0)'; 
-            }
-
-            for (let nick of nicks) {
-                nick.style.opacity = 1;
-                nick.style.transform = 'translateY(0)';    
-            }
-                
-            for (let propusk of propusks) {
-                propusk.style.opacity = 1;
-            }
-
-            for (let detal of detals) {
-                detal.style.opacity = 0.6;
-            }
-        }, 500);
-
-        let deta = document.getElementsByClassName('detal')[0]
-    
-        if (deta) {
-            deta.onclick = function info() {
-                cards = document.getElementById('member0');
-                cards.style.background = 'white';
-                cards.style.borderRadius = '20px';
-                cards.style.zIndex = 9999;
-                
-                let members = document.getElementsByClassName('member');
-
-                for (let member of members) {
-                    if (member.id != 'member0') {
-                        member.style.filter = 'blur(10px)';
-                    }
-                }
-                setTimeout(() => {
-                    cards.style.transform = 'translateY(145px) rotateY(180deg)';
-                    cards.style.width = '80%';
-                    cards.style.scale = 0.5;
-
-                    setTimeout(() => {
-                        cards.style.scale = 1.2;
-                        cards.style.transform = 'translateY(150px) rotateY(0)';
-                    }, 500);
-
-                }, 200);
-            }
-        } else {
-            console.log('Элемент не найден')
-        }
-
-    })
-
-    const titl = document.querySelector('#members');
-    const options = {
-        root: null,
-        threshold: 0,
-        rootMargin: '0px 0px -100% 0px'
-    }
-
-    const onInter = (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting === true) {
-            document.getElementsByClassName('func_div')[0].style.opacity = 0;
-            club = document.getElementsByClassName('club')[0].style;
-            club.opacity = 0;
-            club.transform = "translateX(30px)";
-            const ClubTitle = document.getElementById('fixClubTitle').style;
-            ClubTitle.opacity = 1;
-            ClubTitle.background = 'linear-gradient(135deg, #ffffffcc, #eaf6ffcc)';
-            members = document.getElementById('members');
-            members.style.borderRadius = 0;
-            divClub = document.getElementById('divClub');
-            divClub.style.transform = 'translateY(0)';
-
-            
-            
-        } else {
-            document.getElementsByClassName('func_div')[0].style.opacity = 1;
-            document.getElementsByClassName('club')[0].style.opacity = 1;
-            const ClubTitle = document.getElementById('fixClubTitle').style;
-            ClubTitle.opacity = 0;
-            ClubTitle.background = 'transparent';
-            divClub.style.transform = "translateY(-10px)";
-            members = document.getElementById('members');
-            members.style.borderRadius = '20px 20px 0 0';
-            club.transform = "translateX(0)";
-        }
-    }
-
-    const observer = new IntersectionObserver(onInter, options);
-    observer.observe(titl);
-</script>
 </html>
