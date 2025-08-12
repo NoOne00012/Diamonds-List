@@ -32,7 +32,7 @@
 
         .headScreen {
             width: 100%;
-            height: 90%;
+            height: 100%;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -59,18 +59,17 @@
             all: unset;
             border-radius: 15px;
             width: 90%;
-            height: 10%;
+            height: 100%;
+            padding: 15px 0 15px 0;
             background-color: #007bff;
             color: white;
             text-align: center;
-            margin-top: auto;
             font-size: larger;
         }
 
         .headImg {
-            width: 90%;
+            width: 100%;
             height: auto;
-            border-radius: 30px;
             margin-bottom: 5px;
             filter: drop-shadow(0 6px 10px rgba(173, 216, 230, 0.6))
                     drop-shadow(0 0 10px rgba(255, 105, 180, 0.4));
@@ -110,6 +109,20 @@
             color: #007bff;
         }
 
+        .butnDiv {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5%;
+            padding-bottom: 10%;
+            background: white;
+            flex-direction: column;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            margin-top: auto
+        }
+
     </style>
 </head>
 
@@ -120,8 +133,11 @@
         <div class="text">
             <p>Рады видеть тебя в <b>Diamonds Team!</b><br>Играй, общайся, радуйся вместе с нами!</p>
         </div>
-        <button class="import"><b>Начать</b></button>
-        <p class="aboutUs">Подробнее о нас</p>
+
+        <div class="butnDiv">
+            <button class="import">Начать</button>
+            <p class="aboutUs">Подробнее о нас</p>
+        </div>
         <div class="headMenu">
         </div>
     </div>
@@ -131,7 +147,7 @@
     const tg = window.Telegram.WebApp;
     tg.ready();
     window.Telegram.WebApp.requestFullscreen()
-    const user = tg.initDataUnsafe.user;
+    const user = tg.initDataUnsafe.from_user;
     const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
     username = document.getElementsByClassName('username')[0];
