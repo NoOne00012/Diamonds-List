@@ -145,7 +145,7 @@
     const tg = window.Telegram.WebApp;
     tg.ready();
     window.Telegram.WebApp.requestFullscreen()
-    const user = tg.initDataUnsafe.from_user;
+    const user = tg.initDataUnsafe.user;
     const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
 
     username = document.getElementsByClassName('username')[0];
