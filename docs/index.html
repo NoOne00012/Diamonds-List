@@ -1,162 +1,73 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Beta Web App for DTbot</title>    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Тест</title>
 
     <style>
         html {
-            font-family: 'Roboto';
-            width: 100%;
             height: 100%;
+            width: 100%;
+            padding: 0;
             margin: 0;
         }
 
         body {
-            width: 100%;
             height: 100%;
+            width: 100%;
+            padding: 0;
             margin: 0;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: #eeeff4;
         }
 
-        .headScreen {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .headMenu {
-            width: 100%;
-            height: 11%;
+        .menu {
             position: fixed;
             bottom: 0;
             left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f2f2f2;
-            border-top: 1px solid  #bbbbbd;
-            display: none;
-        }
-
-        .import {
-            all: unset;
-            border-radius: 15px;
-            width: 90%;
-            height: 100%;
-            padding: 20px 0 20px 0;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            font-size: larger;
-        }
-
-        .headImg {
             width: 100%;
-            height: auto;
-        }
-
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            padding: 0;
-            line-height: 0;
-        }
-
-        h2 {
-            padding: 0;
-            line-height: 0;
-        }
-
-        .text {
-            width: 88%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgb(0,0,0,0.6);
-            margin-top: 5px;
-        }
-
-        .aboutUs {
-            margin-top: 10px;
-            color: #007bff;
-            font-size: smaller;
-        }
-
-        .start_title {
-            display: flex;
-            width: 88%;
-            height: auto;
-            flex-direction: column;
-        }
-
-        .username {
-            color: #007bff;
-        }
-
-        .butnDiv {
-            width: 100%;
+            height: 15%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 5%;
-            padding-bottom: 10%;
-            background: white;
-            flex-direction: column;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            margin-top: auto
+        }
+
+        .sections {
+            width: 50%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            border-radius: 40px;
+        }
+
+        .menuBtn {
+            height: 35%;
+            margin: 0 5px 0 5px;
+        }
+
+        .searchBtn {
+            height: 35%;
+            margin: 0 8px 0 8px;
+        }
+
+        #Layer_1 {
+            padding: 15px 0 15px;
+            background: rgba(238, 239, 244, 0.8);
+            border-radius: 20px;
         }
 
     </style>
 </head>
-
 <body>
-    <div class="headScreen">
-        <img src="https://i.ibb.co/ymyV87gj/welcome-1-1.png" class="headImg">
-        <div class="start_title"><h2>Добро пожаловать в</h2><h2 style="color: #007bff;">Diamonds Team</h2></div>
-        <div class="text">
-            <p>Добро пожаловать в <b>Diamonds Team</b> — здесь игры, общение и события сияют ярче! Заводи друзей и заряжайся командным позитивом!</p>
-        </div>
-
-        <div class="butnDiv">
-            <button class="import">Начать</button>
-            <p class="aboutUs">Подробнее о нас</p>
-        </div>
-        <div class="headMenu">
+    <div class="menu">
+        <div class="sections">
+            <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg>
+            <svg id="Layer_1" class="menuBtn" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m24 9a5 5 0 0 1 -.845 2.016l-8.783 11.82a3 3 0 0 1 -4.722.029l-8.826-12.065a5.045 5.045 0 0 1 -.779-1.8h6.268l4.753 12.359a1 1 0 0 0 1.868 0l4.753-12.359zm-6.3-2h6.257a4.974 4.974 0 0 0 -.857-1.871l-2.558-3.454a4.006 4.006 0 0 0 -3.255-1.675h-2.2zm-6.592-7-2.659 7h7.112l-2.606-7zm-4.798 7 2.658-7h-2.322a3.99 3.99 0 0 0 -3.235 1.649l-2.473 3.242a4.99 4.99 0 0 0 -.938 2.109zm9.234 2h-7.088l3.544 9.214z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V7A5.006,5.006,0,0,0,19,2ZM2,7A3,3,0,0,1,5,4H19a3,3,0,0,1,3,3V8H2ZM19,22H5a3,3,0,0,1-3-3V10H22v9A3,3,0,0,1,19,22Z"/><circle cx="12" cy="15" r="1.5"/><circle cx="7" cy="15" r="1.5"/><circle cx="17" cy="15" r="1.5"/></svg>    
         </div>
     </div>
 </body>
-
-<script>
-    /*const tg = window.Telegram.WebApp;
-    tg.ready();
-    window.Telegram.WebApp.requestFullscreen()
-    const user = tg.initDataUnsafe.user;
-    const fullName = `${user.first_name} ${user.last_name || ''}`.trim();
-
-    username = document.getElementsByClassName('username')[0];
-    username.innerText = fullName;*/
-</script>
 </html>
