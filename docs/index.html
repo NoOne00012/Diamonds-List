@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Тест</title>
 
     <style>
@@ -19,6 +22,7 @@
             padding: 0;
             margin: 0;
             background: #eeeff4;
+            font-family: "Roboto";
         }
 
         .menu {
@@ -26,16 +30,17 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 15%;
+            height: 20%;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 15px;
         }
 
         .sections {
             position: relative;
-            width: 45%;
-            height: 45%;
+            width: 70%;
+            height: 40%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,6 +48,14 @@
             border: 1px solid white;
             border-radius: 40px;
             box-shadow: 0 0 10px 10px rgb(230, 230, 230, 0.2);
+        }
+
+        .subSections {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .menuBtn {
@@ -69,6 +82,7 @@
             align-items: center;
             justify-content: center;
             opacity: 0.8;
+            flex-direction: column;
         }
 
         .activeMenu {
@@ -82,9 +96,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 33.33%;
+            margin-left: 0;
             animation: apps 700ms ease forwards;
             animation-delay: 2s;
+            display: none;
         }
 
         .activeMenu0 {
@@ -96,7 +111,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: translateX(-33.33%);
+            transform: translateX(0);
         }
 
         .activeIcon {
@@ -152,7 +167,7 @@
             50% {
                 width: 33.33%;
                 height: 110%;
-                margin-left: 0;
+                margin-left: 66.66;
             }
 
             80% {
@@ -161,7 +176,8 @@
 
             100% {
                 height: 90%;
-                margin-left: 4px;
+                margin-right: 4px;
+                margin-left: 66.66%;
                 background: rgb(235, 236, 245);
                 border-radius: 30px;
             } 
@@ -169,7 +185,7 @@
 
         @keyframes active_menu {
             100% {
-                transform: translateX(0);
+                transform: translateX(-66.66%);
             }
         }
 
@@ -187,10 +203,21 @@
 <body>
     <div class="menu">
         <div class="sections">
-            <div class="defMenu">
-                <div class="defIcon"><svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg></div>
-                <div class="defIcon"><svg id="Layer_1" class="menuBtn" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m23.22 5.743-3.011-4.068a4.005 4.005 0 0 0 -3.254-1.675h-9.91a4 4 0 0 0 -3.245 1.656l-3.065 4.097a3.993 3.993 0 0 0 .123 4.784l8.792 12.328a2.985 2.985 0 0 0 2.35 1.135 3.006 3.006 0 0 0 2.378-1.175l8.722-12.191a4 4 0 0 0 .12-4.891zm-4.628-2.892 3.018 4.078c.016.022.02.048.036.071h-4.892l-1.428-5h1.629a2.012 2.012 0 0 1 1.637.851zm-6.592 16.267-2.7-10.118h5.4zm-2.674-12.118 1.428-5h2.492l1.428 5zm-3.909-4.163a2.007 2.007 0 0 1 1.628-.837h1.629l-1.428 5h-4.928c.014-.022.018-.049.034-.07zm-2.969 6.488a1.9 1.9 0 0 1 -.185-.325h4.969l2.994 11.23zm11.323 10.915 3-11.24h4.986a2.1 2.1 0 0 1 -.243.421z"/></svg></div>
-                <div class="defIcon"><svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline1" viewBox="0 0 24 24" width="512" height="512"><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V7A5.006,5.006,0,0,0,19,2ZM2,7A3,3,0,0,1,5,4H19a3,3,0,0,1,3,3V8H2ZM19,22H5a3,3,0,0,1-3-3V10H22v9A3,3,0,0,1,19,22Z"/><circle cx="12" cy="15" r="1.5"/><circle cx="7" cy="15" r="1.5"/><circle cx="17" cy="15" r="1.5"/></svg></div>
+            <div class="subSections">
+                <div class="defMenu">
+                    <div class="defIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg>
+                        <p style="font-size: small; line-height: 0;">Главная</p>
+                    </div>
+                    <div class="defIcon">
+                        <svg id="Layer_1" class="menuBtn" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m23.22 5.743-3.011-4.068a4.005 4.005 0 0 0 -3.254-1.675h-9.91a4 4 0 0 0 -3.245 1.656l-3.065 4.097a3.993 3.993 0 0 0 .123 4.784l8.792 12.328a2.985 2.985 0 0 0 2.35 1.135 3.006 3.006 0 0 0 2.378-1.175l8.722-12.191a4 4 0 0 0 .12-4.891zm-4.628-2.892 3.018 4.078c.016.022.02.048.036.071h-4.892l-1.428-5h1.629a2.012 2.012 0 0 1 1.637.851zm-6.592 16.267-2.7-10.118h5.4zm-2.674-12.118 1.428-5h2.492l1.428 5zm-3.909-4.163a2.007 2.007 0 0 1 1.628-.837h1.629l-1.428 5h-4.928c.014-.022.018-.049.034-.07zm-2.969 6.488a1.9 1.9 0 0 1 -.185-.325h4.969l2.994 11.23zm11.323 10.915 3-11.24h4.986a2.1 2.1 0 0 1 -.243.421z"/></svg>
+                        <p style="font-size: small; line-height: 0;">Альянс</p>
+                    </div>
+                    <div class="defIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline1" viewBox="0 0 24 24" width="512" height="512"><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V7A5.006,5.006,0,0,0,19,2ZM2,7A3,3,0,0,1,5,4H19a3,3,0,0,1,3,3V8H2ZM19,22H5a3,3,0,0,1-3-3V10H22v9A3,3,0,0,1,19,22Z"/><circle cx="12" cy="15" r="1.5"/><circle cx="7" cy="15" r="1.5"/><circle cx="17" cy="15" r="1.5"/></svg>
+                        <p style="font-size: small; line-height: 0;">События</p>
+                    </div>
+                </div>
             </div>
 
             <div class="activeMenu">
