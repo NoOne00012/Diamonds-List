@@ -51,8 +51,7 @@
         }
 
         .subSections {
-            position: relative;
-            width: 95%;
+            width: 90%;
             height: 85%;
             display: flex;
             justify-content: center;
@@ -82,7 +81,6 @@
         }
 
         .defMenu {
-            position: absolute;
             width: 100%;
             height: 100%;
             display: flex;
@@ -100,19 +98,20 @@
         }
 
         .activeMenu {
-            position: relative;
+            position: absolute;
             left: 0;
             width: 33.33%;
-            height: 100%;
+            height: 90%;
             overflow: hidden;
             background: rgb(235, 236, 245, 1);
-            border-radius: 30px;      
+            border-radius: 20px;      
             display: flex;
             justify-content: center;
             align-items: center;
             margin-left: 0;
-            animation: apps 500ms ease forwards;
+            animation: apps 700ms ease forwards;
             animation-delay: 2s;
+            display: none;
         }
 
         .activeMenu0 {
@@ -179,7 +178,7 @@
 
             50% {
                 width: 33.33%;
-                height: 130%;
+                height: 110%;
                 margin-left: 66.66;
             }
 
@@ -188,8 +187,8 @@
             }
 
             100% {
-                height: 100%;
-                width: 100%;
+                height: 90%;
+                margin-right: 4px;
                 margin-left: 66.66%;
                 background: rgb(235, 236, 245);
                 border-radius: 30px;
@@ -211,39 +210,12 @@
             
         }
 
-        .UserData {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(20px);
-            display: none;
-        }
-
-        .DivUserData {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            max-width: 500px;
-            height: 95%;
-            background:#eeeff4;
-            border-radius: 30px 30px 0 0;
-        }
-
     </style>
 </head>
 <body>
     <div class="menu">
         <div class="sections">
             <div class="subSections">
-                <div class="activeMenu"></div>
                 <div class="defMenu">
                     <div class="defIcon">
                         <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M13.338.833a2,2,0,0,0-2.676,0L0,10.429v10.4a3.2,3.2,0,0,0,3.2,3.2H8V18a4,4,0,0,1,8,0v6.029h4.8a3.2,3.2,0,0,0,3.2-3.2v-10.4Z"/></svg>
@@ -259,15 +231,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="activeMenu">
+                <div class="activeMenu0" id="Menu0">
+                    <div class="activeIcon"><svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,14a3,3,0,0,0-3,3v7.026h6V17A3,3,0,0,0,12,14Z"/><path d="M13.338.833a2,2,0,0,0-2.676,0L0,10.429v10.4a3.2,3.2,0,0,0,3.2,3.2H7V17a5,5,0,0,1,10,0v7.026h3.8a3.2,3.2,0,0,0,3.2-3.2v-10.4Z"/></svg></div>
+                    <div class="activeIcon"><svg id="Layer_0" class="menuBtn" height="512" viewBox="0 0 24 24" width="512"  xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m24 9a5 5 0 0 1 -.845 2.016l-8.783 11.82a3 3 0 0 1 -4.722.029l-8.826-12.065a5.045 5.045 0 0 1 -.779-1.8h6.268l4.753 12.359a1 1 0 0 0 1.868 0l4.753-12.359zm-6.3-2h6.257a4.974 4.974 0 0 0 -.857-1.871l-2.558-3.454a4.006 4.006 0 0 0 -3.255-1.675h-2.2zm-6.592-7-2.659 7h7.112l-2.606-7zm-4.798 7 2.658-7h-2.322a3.99 3.99 0 0 0 -3.235 1.649l-2.473 3.242a4.99 4.99 0 0 0 -.938 2.109zm9.234 2h-7.088l3.544 9.214z" fill="" /></svg></div>
+                    <div class="activeIcon"><svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/></svg></div>
+                </div>
+            </div>
         </div>
 
         <div id="searchBtn" class="sections">
             <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z"/></svg>
         </div>
-    </div>
-
-    <div class="UserData">
-        <div class="DivUserData"></div>
     </div>
 </body>
 </html>
