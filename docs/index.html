@@ -104,18 +104,19 @@
         }
 
         .activeMenu {
-            padding: 0 10px 0 10px;
+            position: absolute;
+            left: 3.75%;
             width: 33.33%;
-            height: 90%;
+            height: 80%;
             overflow: hidden;
-            background: rgb(235, 236, 245, 0.2);
-            border-radius: 20px;      
+            background: rgba(140, 140, 140, 0.4);
+            border-radius: 30px;      
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 0;
-            animation: apps 700ms ease forwards;
-            animation-delay: 2s;
+            
+            /*animation: apps 700ms ease forwards;
+            animation-delay: 2s;*/
         }
 
         .activeMenu0 {
@@ -180,7 +181,7 @@
             }
 
             50% {
-                width: 33.33%;
+                width: 38.33%;
                 height: 110%;
                 margin-left: 66.66;
             }
@@ -224,8 +225,8 @@
 <body>
     <div class="menu">
         <div class="sections">
+            <div class="activeMenu"></div>
             <div class="subSections">
-                <div class="activeMenu"></div>
                 <div class="defMenu">
                     <div class="defIcon" id="Home">
                         <svg xmlns="http://www.w3.org/2000/svg" class="menuBtn" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M13.338.833a2,2,0,0,0-2.676,0L0,10.429v10.4a3.2,3.2,0,0,0,3.2,3.2H8V18a4,4,0,0,1,8,0v6.029h4.8a3.2,3.2,0,0,0,3.2-3.2v-10.4Z"/></svg>
