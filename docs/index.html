@@ -225,12 +225,15 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .LayoutUserProfile {
             position: absolute;
             bottom: 0;
             width: 100%;
+            max-width: 500px;
             height: 88%;
             overflow: hidden;
             background: rgba(26, 27, 32);
@@ -289,6 +292,7 @@
         }
 
         .UserPhoto {
+            position: relative;
             width: 25%;
             max-width: 100px;
             aspect-ratio: 1 / 1;
@@ -297,6 +301,7 @@
             align-items: center;
             /*border: 4px solid rgba(255, 255, 255, 0.6);*/
             border-radius: 500px;
+            overflow: visible;
         }
 
         .UserPhoto div {
@@ -342,7 +347,29 @@
             bottom: 0;
             width: 100%;
             height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+        }
+
+        .Titles div {
+            background: rgba(26, 27, 32);
+            padding: 8px 18px 8px 18px;
+            margin: 0 5px 0 5px;
+            border-radius: 10px;
+
+        }
+
+        .Titles p {
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+            font-size: smaller;
+            font-weight: 500;
+            background-image: linear-gradient(90deg, #e08d3a, #f8dfa6, #e08d3a);
+            background-clip: text;
+            color: transparent;
         }
 
     </style>
@@ -387,7 +414,10 @@
                     <p>Подробнее</p>
                 </div>
 
-                <div class="Titles"></div>
+                <div class="Titles">
+                    <div><p>ЗамПрезидента</p></div>
+                    <div><p>Модератор</p></div>
+                </div>
             </div>
         </div>
     </div>
