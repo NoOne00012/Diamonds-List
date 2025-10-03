@@ -36,6 +36,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
+            z-index: 9999;
         }
 
         .sections {
@@ -226,6 +227,105 @@
             height: 100%;
         }
 
+        .LayoutUserProfile {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90%;
+            overflow: hidden;
+            background: rgba(26, 27, 32);
+            border-radius: 30px 30px 0 0;
+        }
+
+        .Grabber {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .Grabber div {
+            width: 100px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            z-index: 2;
+        }
+
+        .UserBanner {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 35%;
+            background: linear-gradient(135deg, #0a1a3a 0%, #243b6b 40%, #f7c94b 80%, #f5a623 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .UserPhoto {
+            width: 30%;
+            max-width: 80px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid rgba(255, 255, 255, 0.6);
+            border-radius: 100%;
+        }
+
+        .UserPhoto div {
+            width: 85%;
+            aspect-ratio: 1 / 1;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .UserPhoto img {
+            width: 120%;
+        }
+
+        .DataUser {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .DataUser h3,
+        .DataUser p {
+            margin: 10px 0 10px 0;
+            padding: 0;
+            line-height: 0;
+        }
+
+        .DataUser p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: x-small;
+        }
+
+        .UserName {
+            color: rgba(255, 255, 255, 0.99);
+        }
+
+        .Titles {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+        }
+
     </style>
 </head>
 <body>
@@ -257,7 +357,16 @@
 
     <div class="UserProfile">
         <div class="LayoutUserProfile">
+            <div class="Grabber"><div></div></div>
+            <div class="UserBanner">
+                <div class="UserPhoto"><div><img src="https://pbs.twimg.com/media/GqpGo95XUAAUAmd?format=jpg&name=900x900" alt=""></div></div>
+                <div class="DataUser">
+                    <h3 class="UserName">Just a Fog</h3>
+                    <p>Подробнее ></p>
+                </div>
 
+                <div class="Titles"></div>
+            </div>
         </div>
     </div>
 </body>
