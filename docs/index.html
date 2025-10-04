@@ -250,6 +250,7 @@
         .Grabber {
             position: absolute;
             top: 0;
+            top: 0;
             width: 100%;
             height: 3%;
             display: flex;
@@ -294,6 +295,7 @@
                 /* лёгкий подсветочный */
                 radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 70%);
             display: flex;
+            justify-content: center;
             align-items: center;
             flex-direction: column;
         }
@@ -308,7 +310,6 @@
             align-items: center;
             /*border: 4px solid rgba(255, 255, 255, 0.6);*/
             border-radius: 500px;
-            margin-top: auto;
         }
 
         .UserPhoto div {
@@ -330,7 +331,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin: 10px 0 50px 0;
+            margin: 10px 0 20px 0;
         }
 
         .DataUser h2,
@@ -377,6 +378,12 @@
             background-image: linear-gradient(90deg, #e08d3a, #f8dfa6, #e08d3a);
             background-clip: text;
             color: transparent;
+        }
+
+        .PlayerData {
+            width: 80%;
+            height: 110%;
+            background: linear-gradient(90deg, #e08d3a, #f8dfa6, #e08d3a);
         }
 
     </style>
@@ -426,7 +433,26 @@
                     <div><p>Модератор</p></div>
                 </div>
             </div>
+
+            <div class="PlayerData"></div>
         </div>
     </div>
+
+<script>
+    const container = document.querySelector('.LayoutUserProfile');
+    const sticky = document.querySelector('.Grabber');
+
+    container.addEventListener('scroll', () => {
+        sticky.style.top = `${container.scrollTop}px`;
+    });
+
+    function GetSearchWidth() {
+        var search = document.querySelector('#searchBtn');
+        search.style.width = search.offsetHeight + "px";
+    }
+
+    addEventListener("load", GetSearchWidth)
+    addEventListener("resize", GetSearchWidth)
+</script>
 </body>
 </html>
