@@ -238,6 +238,13 @@
             overflow: hidden;
             background: rgba(26, 27, 32);
             border-radius: 30px 30px 0 0;
+            overflow: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .LayoutUserProfile::-webkit-scrollbar {
+            display: none;
         }
 
         .Grabber {
@@ -278,6 +285,7 @@
             top: 0;
             width: 100%;
             height: 35%;
+            min-height: 225px;
             background: 
                 /* верхний мягкий бликовый градиент */
                 linear-gradient(135deg, rgba(255, 204, 51, 0.6), rgba(204, 51, 0, 0.4)),
@@ -286,7 +294,6 @@
                 /* лёгкий подсветочный */
                 radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 70%);
             display: flex;
-            justify-content: center;
             align-items: center;
             flex-direction: column;
         }
@@ -301,7 +308,7 @@
             align-items: center;
             /*border: 4px solid rgba(255, 255, 255, 0.6);*/
             border-radius: 500px;
-            overflow: visible;
+            margin-top: auto;
         }
 
         .UserPhoto div {
@@ -323,7 +330,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin: 10px 0 5px 0;
+            margin: 10px 0 50px 0;
         }
 
         .DataUser h2,
