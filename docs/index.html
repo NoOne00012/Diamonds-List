@@ -237,7 +237,8 @@
             overflow: hidden;
             background: rgba(26, 27, 32);
             border-radius: 30px 30px 0 0;
-            overflow: scroll;
+            overflow-y: scroll;
+            overflow-x: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
@@ -378,9 +379,46 @@
             color: transparent;
         }
 
-        .PlayerData {
+        .ProfileContent {
+            position: relative;
+            width: 100%;
+            height: 200%;
+            margin-top: 10px;
+        }
+
+        .GameData {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+            overflow-x: scroll;
+            direction: ltr;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .GameData::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (min-width: 450px) {
+            .CartGameData { max-width: 250px; }
+        }
+        .CartGameData {
+            flex-shrink: 0;
             width: 80%;
-            height: 110%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
+            border-radius: 20px;
+            margin: 0 20px 0 20px;
+        }
+
+        .CartGameData:last-of-type {
+            margin: 0 20px 0 0;
         }
 
     </style>
@@ -431,7 +469,12 @@
                 </div>
             </div>
 
-            <div class="PlayerData"></div>
+            <div class="ProfileContent">
+                <div class="GameData">
+                    <div class="CartGameData"></div>
+                    <div class="CartGameData" style="background: linear-gradient(135deg, #ff5fa2, #ff80bf, #ff99d9);"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -446,6 +489,8 @@
     function GetSearchWidth() {
         var search = document.querySelector('#searchBtn');
         search.style.width = search.offsetHeight + "px";
+
+        document.querySelector('.Grabber').style.width = document.querySelector('.LayoutUserProfile').scrollWidth + "px";
     }
 
     addEventListener("load", GetSearchWidth)
