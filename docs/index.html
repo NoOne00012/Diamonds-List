@@ -387,7 +387,7 @@
             position: relative;
             width: 100%;
             height: 200%;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .GameData {
@@ -395,14 +395,28 @@
             width: 100%;
             height: 20%;
             display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .TitleGameData {
+            margin: 0 0 10px 40px;
+        }
+
+        .ContentGameData {
+            width: 100%;
+            height: 70%;
+            display: flex;
             align-items: center;
             overflow-x: scroll;
             direction: ltr;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            margin-bottom: auto;
         }
-
-        .GameData::-webkit-scrollbar {
+    
+        .ContentGameData::-webkit-scrollbar {
             display: none;
         }
 
@@ -412,7 +426,7 @@
         .CartGameData {
             flex-shrink: 0;
             width: 80%;
-            height: 70%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -475,8 +489,11 @@
 
             <div class="ProfileContent">
                 <div class="GameData">
-                    <div class="CartGameData"></div>
-                    <div class="CartGameData" style="background: linear-gradient(135deg, #ff5fa2, #ff80bf, #ff99d9);"></div>
+                    <h2 class="TitleGameData">Игровые данные</h2>
+                    <div class="ContentGameData">
+                        <div class="CartGameData"></div>
+                        <div class="CartGameData" style="background: linear-gradient(135deg, #ff5fa2, #ff80bf, #ff99d9);"></div>
+                    </div>
                 </div>
             </div>
         </div>
