@@ -400,8 +400,26 @@
             overflow: hidden;
         }
 
-        .TitleGameData {
+
+        .DescGameData {
+            display: flex;
+            flex-direction: column;
             margin: 0 0 10px 40px;
+            width: 85%;
+        }
+
+        .TitleGameData {
+            line-height: 1;
+            margin: 0 0 2px 0;
+            padding: 0;
+        }
+
+        .DopGameData {
+            font-size: small;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .ContentGameData {
@@ -489,7 +507,10 @@
 
             <div class="ProfileContent">
                 <div class="GameData">
-                    <h2 class="TitleGameData">Игровые данные</h2>
+                    <div class="DescGameData">
+                        <h2 class="TitleGameData">Мои игровые данные</h2>
+                        <p class="DopGameData">редакция, просмотр статистики и активности аккаунта</p>
+                    </div>
                     <div class="ContentGameData">
                         <div class="CartGameData"></div>
                         <div class="CartGameData" style="background: linear-gradient(135deg, #ff5fa2, #ff80bf, #ff99d9);"></div>
