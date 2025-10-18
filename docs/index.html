@@ -432,6 +432,7 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
             margin-bottom: auto;
+            perspective: 1000px;
         }
     
         .ContentGameData::-webkit-scrollbar {
@@ -451,6 +452,10 @@
             background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
             border-radius: 20px;
             margin: 0 20px 0 20px;
+            transform-style: preserve-3d;
+            transform: rotateX(65deg);
+            box-shadow: 0 5px 10px #1976d2,
+                        0 15px 30px #1976d23a;
         }
 
         .CartGameData:last-of-type {
