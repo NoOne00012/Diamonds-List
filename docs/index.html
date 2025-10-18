@@ -52,6 +52,7 @@
             /*box-shadow: 0 0 10px 15px rgb(230, 230, 230, 0.2);*/
             max-width: 260px;
             min-height: 60px;
+            backdrop-filter: blur(20px);
         }
 
         .subSections {
@@ -94,7 +95,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(20px);
         }
 
         .defIcon {
@@ -449,7 +449,7 @@
         }
         .CartGameData {
             flex-shrink: 0;
-            width: 75%;
+            width: 72.5%;
             height: 100%;
             display: flex;
             justify-content: center;
@@ -462,15 +462,14 @@
             transform: rotateX(70deg);
             box-shadow: 0 3px 0px #1976d2;
             position: absolute;
-            bottom: 35px;
-            z-index: 2;
+            bottom: 20px;
         }
 
         .CartGameData:last-of-type {
             margin: 0 20px 0 20px;
-            bottom: 20px;
+            bottom: 35px;
             box-shadow: 0 3px 0px #ff5fa2;
-            z-index: 1;
+            width: 75%;
             
         }
 
