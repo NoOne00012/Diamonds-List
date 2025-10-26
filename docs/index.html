@@ -305,7 +305,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            transition: none;
+            transition: 10ms linear;
         }
 
         .UserPhoto {
@@ -589,6 +589,7 @@
 
     const container = document.querySelector('.LayoutUserProfile')
     container.addEventListener('scroll', () => {
+
         const banner = document.querySelector(".UserBanner")
         banner.style.height = `${parseFloat(getComputedStyle(banner).height) - 10}px`;
     });
