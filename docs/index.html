@@ -440,6 +440,16 @@
             display: none;
         }
 
+        @keyframes test {
+            0% {
+                transform: rotateX(100deg);
+            }
+
+            100% {
+                transform: rotateX(70deg);
+            }
+        }
+
         @media (min-width: 450px) {
             .CartGameData { max-width: 250px; }
         }
@@ -455,17 +465,19 @@
             margin: 0 20px 0 20px;
             transform-style: preserve-3d;
             transform-origin: center;
-            transform: rotateX(70deg);
+            transform: rotateX(100deg);
             /*box-shadow: 0 10px 0px #1976d2;*/
             position: absolute;
             bottom: -25px;
+            animation: test 700ms ease forwards;
+            animation-delay: 2s;
         }
 
         .CartGameData:last-of-type {
             margin: 0 20px 0 20px;
             bottom: 0px;
             width: 75%;
-            transform: rotateX(70deg);
+            transform: rotateX(100deg);
             
         }
 
