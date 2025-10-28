@@ -53,6 +53,8 @@
             max-width: 260px;
             min-height: 60px;
             backdrop-filter: blur(10px);
+
+            transition: 500ms;
         }
 
         .subSections {
@@ -247,6 +249,7 @@
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: auto;
             border: 1px solid rgba(26, 27, 32);
+            transition: 500ms;
         }
 
         .LayoutUserProfile::-webkit-scrollbar {
@@ -442,7 +445,7 @@
 
         @keyframes test {
             0% {
-                transform: rotateX(100deg);
+                transform: rotateX(90deg);
             }
 
             100% {
@@ -465,7 +468,7 @@
             margin: 0 20px 0 20px;
             transform-style: preserve-3d;
             transform-origin: center;
-            transform: rotateX(100deg);
+            transform: rotateX(90deg);
             /*box-shadow: 0 10px 0px #1976d2;*/
             position: absolute;
             bottom: -25px;
@@ -477,7 +480,6 @@
             margin: 0 20px 0 20px;
             bottom: 0px;
             width: 75%;
-            transform: rotateX(100deg);
             
         }
 
@@ -589,23 +591,21 @@
         sticky.style.top = `${container.scrollTop}px`;
     });*/
 
-    function GetSearchWidth() {
-        var search = document.querySelector('#searchBtn');
-        search.style.width = search.offsetHeight + "px";
+    var srch = document.querySelector("#searchBtn");
+    srch.addEventListener("click", () => {
+        var layout = document.querySelector(".LayoutUserProfile").style;
+        var menu = document.getElementsByClassName("sections")[0].style;
 
-        document.querySelector('.Grabber').style.width = document.querySelector('.LayoutUserProfile').scrollWidth + "px";
-    }
-
-    addEventListener("load", GetSearchWidth)
-    addEventListener("resize", GetSearchWidth)
-
-    const container = document.querySelector('.LayoutUserProfile')
-    container.addEventListener('scroll', () => {
-
-        const banner = document.querySelector(".UserBanner")
-        banner.style.height = `${parseFloat(getComputedStyle(banner).height) - 10}px`;
-    });
-
+        menu.transform = "translateY(-10px)";
+        srch.style.transform = "translateX(20px)";
+        setTimeout(() => {
+            menu.transform = "translateY(100px)";
+            srch.style.transform = "translateX(-10%)";
+            srch.style.paddingRight = "70%";
+            layout.filter = "blur(50px)";
+        }, 300)
+    
+    })
 </script>
 </body>
 </html>
