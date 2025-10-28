@@ -15,6 +15,7 @@
             padding: 0;
             margin: 0;
             overflow: hidden;
+            filter: invert();
         }
 
         body {
@@ -53,7 +54,7 @@
             max-width: 260px;
             min-height: 60px;
             backdrop-filter: blur(10px);
-
+            flex: 0 0 auto;
             transition: 500ms;
         }
 
@@ -69,6 +70,7 @@
         .menuBtn {
             height: 38%;
             fill: rgba(140, 140, 140);
+            filter: invert();
         }
 
         .textBtn {
@@ -78,6 +80,7 @@
             font-weight: 400;
             font-size: x-small;
             transform: translateY(2px);
+            filter: invert();
         }
 
         #searchBtn {
@@ -112,9 +115,9 @@
             position: absolute;
             left: 3.75%;
             width: 33.33%;
-            height: 82%;
+            height: 84%;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 30px;      
             display: flex;
             justify-content: center;
@@ -321,6 +324,7 @@
             align-items: center;
             /*border: 4px solid rgba(255, 255, 255, 0.6);*/
             border-radius: 500px;
+            filter: invert();
         }
 
         .UserPhoto div {
@@ -397,6 +401,7 @@
             height: 200%;
             margin-top: 20px;
             transition: 500ms;
+            filter: invert();
         }
 
         .GameData {
